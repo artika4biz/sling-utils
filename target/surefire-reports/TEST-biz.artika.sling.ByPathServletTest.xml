@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="biz.artika.sling.ByPathServletTest" time="0.043" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/artika/Documents/LABORATORIO/workspace/git/sling-utils/target/test-classes:/Users/artika/Documents/LABORATORIO/workspace/git/sling-utils/target/classes:/Users/artika/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar:/Users/artika/.m2/repository/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar:/Users/artika/.m2/repository/org/osgi/org.osgi.core/4.2.0/org.osgi.core-4.2.0.jar:/Users/artika/.m2/repository/javax/jcr/jcr/2.0/jcr-2.0.jar:/Users/artika/.m2/repository/org/apache/sling/org.apache.sling.api/2.9.0/org.apache.sling.api-2.9.0.jar:/Users/artika/.m2/repository/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar:/Users/artika/.m2/repository/org/apache/felix/org.apache.felix.scr.annotations/1.9.12/org.apache.felix.scr.annotations-1.9.12.jar:/Users/artika/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/artika/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/artika/.m2/repository/org/apache/sling/org.apache.sling.commons.osgi/2.4.2/org.apache.sling.commons.osgi-2.4.2.jar:/Users/artika/.m2/repository/org/osgi/osgi.annotation/6.0.0/osgi.annotation-6.0.0.jar:/Users/artika/.m2/repository/org/osgi/org.osgi.service.component.annotations/1.3.0/org.osgi.service.component.annotations-1.3.0.jar:/Users/artika/.m2/repository/org/osgi/org.osgi.service.metatype.annotations/1.3.0/org.osgi.service.metatype.annotations-1.3.0.jar:/Users/artika/.m2/repository/org/apache/sling/org.apache.sling.commons.johnzon/1.2.14/org.apache.sling.commons.johnzon-1.2.14.jar:/Users/artika/.m2/repository/org/osgi/org.osgi.annotation.versioning/1.1.1/org.osgi.annotation.versioning-1.1.1.jar:"/>
+    <property name="java.vm.vendor" value="AdoptOpenJDK"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="user.country" value="IT"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib"/>
+    <property name="sun.java.command" value="/Users/artika/Documents/LABORATORIO/workspace/git/sling-utils/target/surefire/surefirebooter6222518608932942877.jar /Users/artika/Documents/LABORATORIO/workspace/git/sling-utils/target/surefire 2022-04-12T09-44-47_571-jvmRun1 surefire8711520708603538773tmp surefire_06891294400601195499tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="surefire.test.class.path" value="/Users/artika/Documents/LABORATORIO/workspace/git/sling-utils/target/test-classes:/Users/artika/Documents/LABORATORIO/workspace/git/sling-utils/target/classes:/Users/artika/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar:/Users/artika/.m2/repository/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar:/Users/artika/.m2/repository/org/osgi/org.osgi.core/4.2.0/org.osgi.core-4.2.0.jar:/Users/artika/.m2/repository/javax/jcr/jcr/2.0/jcr-2.0.jar:/Users/artika/.m2/repository/org/apache/sling/org.apache.sling.api/2.9.0/org.apache.sling.api-2.9.0.jar:/Users/artika/.m2/repository/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar:/Users/artika/.m2/repository/org/apache/felix/org.apache.felix.scr.annotations/1.9.12/org.apache.felix.scr.annotations-1.9.12.jar:/Users/artika/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/artika/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/artika/.m2/repository/org/apache/sling/org.apache.sling.commons.osgi/2.4.2/org.apache.sling.commons.osgi-2.4.2.jar:/Users/artika/.m2/repository/org/osgi/osgi.annotation/6.0.0/osgi.annotation-6.0.0.jar:/Users/artika/.m2/repository/org/osgi/org.osgi.service.component.annotations/1.3.0/org.osgi.service.component.annotations-1.3.0.jar:/Users/artika/.m2/repository/org/osgi/org.osgi.service.metatype.annotations/1.3.0/org.osgi.service.metatype.annotations-1.3.0.jar:/Users/artika/.m2/repository/org/apache/sling/org.apache.sling.commons.johnzon/1.2.14/org.apache.sling.commons.johnzon-1.2.14.jar:/Users/artika/.m2/repository/org/osgi/org.osgi.annotation.versioning/1.1.1/org.osgi.annotation.versioning-1.1.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/artika"/>
+    <property name="user.language" value="it"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre"/>
+    <property name="basedir" value="/Users/artika/Documents/LABORATORIO/workspace/git/sling-utils"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/artika/Documents/LABORATORIO/workspace/git/sling-utils/target/surefire/surefirebooter6222518608932942877.jar"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="1.8.0_252-b09"/>
+    <property name="user.name" value="artika"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="10.16"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/artika/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/bf/17qw7fls0n3_1x3sss_p5wt40000gn/T/"/>
+    <property name="idea.version" value="2018.2.4"/>
+    <property name="java.version" value="1.8.0_252"/>
+    <property name="user.dir" value="/Users/artika/Documents/LABORATORIO/workspace/git/sling-utils"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/Users/artika/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="AdoptOpenJDK"/>
+    <property name="java.vm.version" value="25.252-b09"/>
+    <property name="java.ext.dirs" value="/Users/artika/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+  </properties>
+  <testcase name="testByPathServlet" classname="biz.artika.sling.ByPathServletTest" time="0.002"/>
+</testsuite>
