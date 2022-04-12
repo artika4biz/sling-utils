@@ -10,6 +10,6 @@ The project is built quite simple:
 
     mvn clean install
 
-To install the OSGi bundle use the project **autoInstallBundle**:
+To install the OSGi bundle use the **autoInstallBundle** profile:
 
     mvn clean install -P autoInstallBundle
