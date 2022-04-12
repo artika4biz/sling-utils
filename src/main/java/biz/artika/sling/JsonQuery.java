@@ -48,8 +48,8 @@ import org.slf4j.LoggerFactory;
  * Servlet arguments:
  * sql: the query to be executed
  * offset: starting point of the result set (see javax.jcr.query.Query documentation)
- * limit: maximum number of node returned (see javax.jcr.query.Query documentation)
- * eaxample: http://localhost:8080/v1/jcr-query?offset=0&limit=100&sql=select * from [oak:Unstructured] as n where isdescendantnode(n,'/data/cassazione/')
+ * limit: maximum number of nodes returned (see javax.jcr.query.Query documentation)
+ * eaxample: http://localhost:8080/v1/jcr-query?offset=0&limit=100&sql=select * from [oak:Unstructured] as n where isdescendantnode(n,'/data/archive/')
  * @author Yuri Simione - https://linkedin.com/in/yurisimione
  */
 public class JsonQuery extends SlingSafeMethodsServlet {
@@ -106,14 +106,14 @@ public class JsonQuery extends SlingSafeMethodsServlet {
             NodeIterator iterator = result.getNodes();
                 while( iterator.hasNext() ) {
                 Node node = iterator.nextNode();
-                sb.append("{\"node\": \"" + node.getPath() + "\"},");
+                sb.append("{\"node\": \"").append(node.getPath()).append("\"},");
 
             }
             // remove last comma symbol, if needed
             if( sb.length() > lenPrefix)
                 sb.deleteCharAt( sb.length() - 1 );
             sb.append("]}");
-            response.getWriter().println(sb.toString());
+            response.getWriter().println(sb);
         } catch (RepositoryException e) {
             throw new ServletException(e);
         }

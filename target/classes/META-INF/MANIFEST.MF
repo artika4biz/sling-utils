@@ -1,15 +1,15 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1649749488814
+Bnd-LastModified: 1649761453134
 Build-Jdk: 1.8.0_252
 Built-By: artika
 Bundle-Description: biz.artika.sling - sling-utils
 Bundle-ManifestVersion: 2
 Bundle-Name: sling-utils
-Bundle-SymbolicName: biz.artika.sling.utils
+Bundle-SymbolicName: biz.artika.sling.artika-sling-utils
 Bundle-Version: 1.0.0.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
-Export-Package: biz.artika.sling;uses:="javax.servlet,org.apache.sling.a
- pi,org.apache.sling.api.servlets";version="1.0.0"
+Export-Package: biz.artika.sling;version="1.0.0";uses:="javax.servlet,or
+ g.apache.sling.api,org.apache.sling.api.servlets"
 Import-Package: javax.jcr;version="[2.0,3)",javax.jcr.query;version="[2.
  0,3)",javax.servlet,org.apache.sling.api;version="[2.3,3)",org.apache.s
  ling.api.resource;version="[2.8,3)",org.apache.sling.api.servlets;versi
