@@ -1,7 +1,7 @@
 # Sling Utils
 
 This is an OSGI module for Apache Sling with some utilities.
-- **JsonServlet**: A simple servlet that provides results of a SQL-2 query in Json format, with pagination. This is useful when traversing JCR repository is not enough.
+- **JsonQuery**: A simple servlet that provides results of a SQL-2 query in Json format, with pagination. This is useful when traversing JCR repository is not enough.
 
 
 #### Build and Installation
