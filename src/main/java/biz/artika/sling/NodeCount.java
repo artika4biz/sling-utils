@@ -89,16 +89,26 @@ public class NodeCount extends SlingSafeMethodsServlet {
         try {
             Query query = session.getWorkspace().getQueryManager().createQuery(queryText, Query.JCR_SQL2);
             QueryResult result  = query.execute();
-
             NodeIterator iterator = result.getNodes();
-            while( iterator.hasNext() ) {
-                Node node = iterator.nextNode();
-                ++count;
+            long jcrGetSize =  iterator.getSize();
+            String methodCount;
+            if(jcrGetSize < 0) {
+                methodCount = "counting each returned node";
+                while (iterator.hasNext()) {
+                    Node node = iterator.nextNode();
+                    ++count;
+                }
+            }
+            else {
+                count = jcrGetSize;
+                methodCount = "Iterator.getSize()";
             }
             long finishTime = System.currentTimeMillis();
             long duration = finishTime-startTime;
-            response.getWriter().println("{\"count\":" + count +
-                    ",\"execution time\":" + duration + ",\"_comment\":\"Execution time reported in milliseconds.\"}");
+            response.getWriter().println("{\"nodeCount\":" + count +
+                    ",\"_methodCount\":\"" + methodCount +
+                    "\",\"execution time\":" + duration +
+                    ",\"_comment\":\"Execution time reported in milliseconds.\"}");
         } catch (RepositoryException e) {
             throw new ServletException(e);
         }
