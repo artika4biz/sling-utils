@@ -21,18 +21,23 @@
 
 package biz.artika.sling;
 
-import java.io.IOException;
-import javax.jcr.*;
-import javax.jcr.query.Query;
-import javax.jcr.query.QueryResult;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletResponse;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.jcr.Node;
+import javax.jcr.NodeIterator;
+import javax.jcr.RepositoryException;
+import javax.jcr.Session;
+import javax.jcr.query.Query;
+import javax.jcr.query.QueryResult;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import org.apache.jackrabbit.oak.json.JsonSerializer;
 
 @Component(
         immediate=true,
@@ -43,14 +48,14 @@ import org.slf4j.LoggerFactory;
                 "sling.servlet.paths:String=/v1/jcr-query"
         })
 
-/**
- * A simple servlet that provides results of a SQL-2 query in Json format, with pagination.
- * Servlet arguments:
- * sql: the query to be executed
- * offset: starting point of the result set (see javax.jcr.query.Query documentation)
- * limit: maximum number of nodes returned (see javax.jcr.query.Query documentation)
- * eaxample: http://localhost:8080/v1/jcr-query?offset=0&limit=100&sql=select * from [oak:Unstructured] as n where isdescendantnode(n,'/data/archive/')
- * @author Yuri Simione - https://linkedin.com/in/yurisimione
+/*
+  A simple servlet that provides results of a SQL-2 query in Json format, with pagination.
+  Servlet arguments:
+  sql: the query to be executed
+  offset: starting point of the result set (see javax.jcr.query.Query documentation)
+  limit: maximum number of nodes returned (see javax.jcr.query.Query documentation)
+  example: http://localhost:8080/v1/jcr-query?offset=0&limit=100&sql=select * from [oak:Unstructured] as n where isdescendantnode(n,'/data/archive/')
+  @author Yuri Simione - https://linkedin.com/in/yurisimione
  */
 public class JsonQuery extends SlingSafeMethodsServlet {
 
@@ -68,6 +73,7 @@ public class JsonQuery extends SlingSafeMethodsServlet {
         response.setCharacterEncoding("UTF-8");
 
         Session session = request.getResourceResolver().adaptTo(Session.class);
+        assert session != null;
         if(session.getUserID().equals("anonymous") || session.getUserID() == null)  {
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             return;
@@ -95,6 +101,8 @@ public class JsonQuery extends SlingSafeMethodsServlet {
             log.debug("Limit parameter not valid or not provided. Use default value 10");
         }
 
+        long startTime = System.currentTimeMillis();
+
         try {
             StringBuffer sb = new StringBuffer("{ \"results\":[");
             int lenPrefix = sb.length();
@@ -106,13 +114,15 @@ public class JsonQuery extends SlingSafeMethodsServlet {
             NodeIterator iterator = result.getNodes();
                 while( iterator.hasNext() ) {
                 Node node = iterator.nextNode();
-                sb.append("{\"node\": \"").append(node.getPath()).append("\"},");
-
+                sb.append("\"").append(node.getPath()).append("\",");
             }
+            long finishTime = System.currentTimeMillis();
+            long duration = finishTime-startTime;
+
             // remove last comma symbol, if needed
             if( sb.length() > lenPrefix)
                 sb.deleteCharAt( sb.length() - 1 );
-            sb.append("]}");
+            sb.append("],\"execution_time\":" + duration + ",\"_comment\":\"Execution time reported in milliseconds.\"}");
             response.getWriter().println(sb);
         } catch (RepositoryException e) {
             throw new ServletException(e);
