@@ -70,12 +70,14 @@ public class NodeCount extends SlingSafeMethodsServlet {
         response.setCharacterEncoding("UTF-8");
 
         Session session = request.getResourceResolver().adaptTo(Session.class);
+        assert session != null;
         if(session.getUserID().equals("anonymous") || session.getUserID() == null)  {
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             return;
         }
 
-        String queryText = request.getParameter("sql");
+        String queryText;
+        queryText = request.getParameter("sql");
         if ( queryText == null || queryText.isEmpty() ) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             response.getWriter().write("Missing mandatory 'sql' parameter");
@@ -96,7 +98,7 @@ public class NodeCount extends SlingSafeMethodsServlet {
             long finishTime = System.currentTimeMillis();
             long duration = finishTime-startTime;
             response.getWriter().println("{\"count\":" + count +
-                    ",\"execution time (ms)\":" + duration + "}");
+                    ",\"execution time\":" + duration + ",\"_comment\":\"Execution time reported in milliseconds.\"}");
         } catch (RepositoryException e) {
             throw new ServletException(e);
         }
