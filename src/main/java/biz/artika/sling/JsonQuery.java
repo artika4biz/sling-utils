@@ -104,7 +104,11 @@ public class JsonQuery extends SlingSafeMethodsServlet {
         long startTime = System.currentTimeMillis();
 
         try {
-            StringBuffer sb = new StringBuffer("{ \"results\":[");
+            StringBuffer sb = new StringBuffer("{ "+
+                    "\"queryText\":\"" + queryText + "\"," +
+                    "\"offset\":" + offset + "," +
+                    "\"limit\":" + limit + "," +
+                    "\"results\":[");
             int lenPrefix = sb.length();
 
             Query query = session.getWorkspace().getQueryManager().createQuery(queryText, Query.JCR_SQL2);
