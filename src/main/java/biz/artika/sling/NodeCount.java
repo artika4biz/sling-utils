@@ -70,7 +70,6 @@ public class NodeCount extends SlingSafeMethodsServlet {
         response.setCharacterEncoding("UTF-8");
 
         Session session = request.getResourceResolver().adaptTo(Session.class);
-        assert session != null;
         if(session.getUserID().equals("anonymous") || session.getUserID() == null)  {
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             return;
@@ -105,7 +104,9 @@ public class NodeCount extends SlingSafeMethodsServlet {
             }
             long finishTime = System.currentTimeMillis();
             long duration = finishTime-startTime;
-            response.getWriter().println("{\"nodeCount\":" + count +
+            response.getWriter().println("{" +
+                    "\"queryText\":\"" + queryText + "\"," +
+                    "\"nodeCount\":" + count +
                     ",\"_methodCount\":\"" + methodCount +
                     "\",\"execution time\":" + duration +
                     ",\"_comment\":\"Execution time reported in milliseconds.\"}");
