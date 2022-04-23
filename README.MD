@@ -14,7 +14,7 @@ A simple servlet that provides results count of a SQL-2 query. JCR does not prov
 
 Remember that the NodeIterator.getSize() method counts exactly (just for the Jackrabbit OAK implementation) all the nodes because ACLs are not applied to the results as per the [the official documentation](https://jackrabbit.apache.org/oak/docs/query/query-engine.html).
 
-#### How to enable the Fast return size option
+#### How to enable the _Fast return size_ option
 <img width="1753" alt="image" src="https://user-images.githubusercontent.com/18739184/164893767-23551c86-5077-4347-975c-5d54476303ec.png">
 
 #### Example of a count request when the Fast return size option is enabled (Execution time, 25ms)
