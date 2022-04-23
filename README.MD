@@ -11,10 +11,10 @@ A simple servlet that provides results count of a SQL-2 query. JCR does not prov
 #### How to enable the Fast return size option
 <img width="1753" alt="image" src="https://user-images.githubusercontent.com/18739184/164893767-23551c86-5077-4347-975c-5d54476303ec.png">
 
-#### Example of a count request when the Fast return size option is enabled
+#### Example of a count request when the Fast return size option is enabled (Execution time, 25ms)
 <img width="981" alt="image" src="https://user-images.githubusercontent.com/18739184/164901703-2492b4bd-9639-46b5-97fc-97c03d129a25.png">
 
-#### Example of a count request when the Fast return size option is disabled
+#### Example of a count request when the Fast return size option is disabled (Execution time, more than 5 seconds)
 <img width="984" alt="image" src="https://user-images.githubusercontent.com/18739184/164900990-d1a94ec8-018b-4761-a375-596b1638c943.png">
 
 ## Build and Installation
