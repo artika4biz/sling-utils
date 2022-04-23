@@ -24,7 +24,7 @@ Remember that the NodeIterator.getSize() method counts exactly (just for the Jac
 <img width="984" alt="image" src="https://user-images.githubusercontent.com/18739184/164900990-d1a94ec8-018b-4761-a375-596b1638c943.png">
 
 ## When these servlets are useful
-Whit just these two servlets I can work on millions of documents stored in Apache Jackrabbit OAK, for example executing less than 20 lines of Pyhton code, like these: 
+Whit just these two servlets I can now analyze millions of documents stored in Apache Jackrabbit OAK, for example executing less than 20 lines of Pyhton code, like these: 
 <img width="1518" alt="image" src="https://user-images.githubusercontent.com/18739184/164910461-f0ecad6f-6aea-4c01-9bf5-1d31b4d5f3b7.png">
 
 ## Build and Installation
