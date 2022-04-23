@@ -5,9 +5,7 @@ This is an OSGI module for [Apache Sling](https://sling.apache.org/) and [Adobe 
 
 - **NodeCount**: A simple servlet that provides results count of a SQL-2 query. JCR does not provide a "count(*)" function. This servlet uses the Apache Jackrabbit OAK NodeIterator.getSize() method if the **Fast return size** (OSGI configuration with PID org.apache.jackrabbit.oak.query.QueryEngineSettingsService) is enabled or count each returned node otherwise. Remember that the NodeIterator.getSize() method counts exactly (just for the Jackrabbit OAK implementation) all the nodes because ACLs are not applied to the results as per the [the official documentation](https://jackrabbit.apache.org/oak/docs/query/query-engine.html). Conversely, this servlet counts only the nodes returned by the query, the only nodes that the ACLs allow to be consulted for the current authenticated session. <img width="1753" alt="image" src="https://user-images.githubusercontent.com/18739184/164893767-23551c86-5077-4347-975c-5d54476303ec.png">[[http://localhost:8080/v1/count?sql=select * from [oak:Unstructured] as n where isdescendantnode(n,'/data/cassazione') and id is not null]: <img width="986" alt="image" src="https://user-images.githubusercontent.com/18739184/164893852-b2ea371c-83e9-48d1-be89-59b44ae93e46.png">
 
-
-All the servlets need an authenticated session otherwise the client receives a HTTP 403 Error:
-<img width="793" alt="image" src="https://user-images.githubusercontent.com/18739184/164893751-9b688d36-7657-4f63-b73e-208bff44289c.png">
+All the servlets need an authenticated session otherwise the client receives a HTTP 403 Error.
 
 #### Build and Installation
 
