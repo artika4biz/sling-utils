@@ -8,7 +8,7 @@ A simple servlet that provides node path of SQL-2 query results, in Json format,
 <img width="995" alt="image" src="https://user-images.githubusercontent.com/18739184/164780593-9f1d8324-776e-4e15-b129-2a13a208a947.png">
 
 ### NodeCount
-A simple servlet that provides results count of a SQL-2 query. JCR does not provide a "count(*)" function. This servlet is smart enough to use the fastest strategy;
+A simple servlet that provides results count of a SQL-2 query. JCR does not provide a "count(*)" function. This servlet is smart enough to use the fastest strategy:
 - Using the Apache Jackrabbit OAK NodeIterator.getSize() method; in Apache Jackrabbit OAK implementation, this methods provide a valid result just if the **Fast return size** is enabled (OSGI configuration with PID org.apache.jackrabbit.oak.query.QueryEngineSettingsService)
 - Counting each returned node otherwise (very slow but it works when needed!).
 
