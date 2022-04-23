@@ -17,14 +17,14 @@ Remember that the NodeIterator.getSize() method counts exactly (just for the Jac
 #### How to enable the _Fast return size_ option
 <img width="1753" alt="image" src="https://user-images.githubusercontent.com/18739184/164893767-23551c86-5077-4347-975c-5d54476303ec.png">
 
-#### Example of a count request when the Fast return size option is enabled (Execution time, 25ms)
+#### Example of a count request when the Fast return size option is enabled (Execution time, 25ms):
 <img width="981" alt="image" src="https://user-images.githubusercontent.com/18739184/164901703-2492b4bd-9639-46b5-97fc-97c03d129a25.png">
 
-#### Example of a count request when the Fast return size option is disabled (Execution time, more than 5 seconds)
+#### Example of a count request when the Fast return size option is disabled (Execution time, more than 5 seconds but it works!):
 <img width="984" alt="image" src="https://user-images.githubusercontent.com/18739184/164900990-d1a94ec8-018b-4761-a375-596b1638c943.png">
 
 ## When these servlets are useful
-Whit just these two servlets I can now analyze millions of documents stored in Apache Jackrabbit OAK, executing less than 20 lines of Pyhton code, like these ones: 
+Whit just these two servlets I can now analyze millions of documents stored into an Apache Jackrabbit OAK repository via Apache Sling or Adobe AEM, executing less than 20 lines of Pyhton code, like these ones: 
 <img width="1518" alt="image" src="https://user-images.githubusercontent.com/18739184/164910461-f0ecad6f-6aea-4c01-9bf5-1d31b4d5f3b7.png">
 
 ## Build and Installation
