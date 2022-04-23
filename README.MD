@@ -5,15 +5,13 @@ This is an OSGI module for [Apache Sling](https://sling.apache.org/) and [Adobe 
 
 - **NodeCount**: A simple servlet that provides results count of a SQL-2 query. JCR does not provide a "count(*)" function. This servlet uses the Apache Jackrabbit OAK NodeIterator.getSize() method if the **Fast return size** (OSGI configuration with PID org.apache.jackrabbit.oak.query.QueryEngineSettingsService) is enabled or count each returned node otherwise. Remember that the NodeIterator.getSize() method counts exactly (just for the Jackrabbit OAK implementation) all the nodes because ACLs are not applied to the results as per the [the official documentation](https://jackrabbit.apache.org/oak/docs/query/query-engine.html). Conversely, this servlet counts only the nodes returned by the query, the only nodes that the ACLs allow to be consulted for the current authenticated session. <img width="886" alt="image" src="https://user-images.githubusercontent.com/18739184/164772224-ce8355d3-3f11-4667-8ce3-6beced9c86dc.png"> - .  [http://localhost:8080/v1/count?sql=select * from [oak:Unstructured] as n where isdescendantnode(n,'/data/cassazione') and id is not null]: <img width="996" alt="image" src="https://user-images.githubusercontent.com/18739184/164778418-42cf870e-ca03-4716-9eb7-f4d224542d5b.png">
 
-All the servlets need an authenticated session otherwise the client receives a HTTP 403 Error.
-
+All the servlets need an authenticated session otherwise the client receives a HTTP 403 Error:
+<img width="988" alt="image" src="https://user-images.githubusercontent.com/18739184/164893642-e367a93a-d226-404f-913d-127ec47b4942.png">
 
 #### Build and Installation
 
 The project is built quite simple:
-
     mvn clean install
 
 To install the OSGi bundle use the **autoInstallBundle** profile:
-
     mvn clean install -P autoInstallBundle
