@@ -23,7 +23,7 @@ Remember that the NodeIterator.getSize() method counts exactly (just for the Jac
 #### Example of a count request when the Fast return size option is disabled (Execution time, more than 5 seconds)
 <img width="984" alt="image" src="https://user-images.githubusercontent.com/18739184/164900990-d1a94ec8-018b-4761-a375-596b1638c943.png">
 
-## Why these servlet can be useful
+## When these servlets can be useful
 Whit just these two servlets I can work on millions of documents stored in Apache Jackrabbit OAK, for example executing less than 20 lines of Pyhton code, like these: 
 <img width="1518" alt="image" src="https://user-images.githubusercontent.com/18739184/164910461-f0ecad6f-6aea-4c01-9bf5-1d31b4d5f3b7.png">
 
