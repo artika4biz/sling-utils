@@ -12,10 +12,10 @@ A simple servlet that provides results count of a SQL-2 query. JCR does not prov
 <img width="1753" alt="image" src="https://user-images.githubusercontent.com/18739184/164893767-23551c86-5077-4347-975c-5d54476303ec.png">
 
 #### Example of a count request when the Fast return size option is enabled
-<img width="985" alt="image" src="https://user-images.githubusercontent.com/18739184/164896798-70fd1abd-b310-44b6-a409-4d673bbd0a27.png">
+<img width="981" alt="image" src="https://user-images.githubusercontent.com/18739184/164901703-2492b4bd-9639-46b5-97fc-97c03d129a25.png">
 
 #### Example of a count request when the Fast return size option is disabled
-<img width="986" alt="image" src="https://user-images.githubusercontent.com/18739184/164893852-b2ea371c-83e9-48d1-be89-59b44ae93e46.png">
+<img width="984" alt="image" src="https://user-images.githubusercontent.com/18739184/164900990-d1a94ec8-018b-4761-a375-596b1638c943.png">
 
 ## Build and Installation
 
