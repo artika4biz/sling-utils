@@ -11,7 +11,9 @@ All the servlets need an authenticated session otherwise the client receives a H
 #### Build and Installation
 
 The project is built quite simple:
+
     mvn clean install
 
 To install the OSGi bundle use the **autoInstallBundle** profile:
+
     mvn clean install -P autoInstallBundle
